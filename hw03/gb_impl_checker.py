@@ -5,7 +5,7 @@ import numpy as np
 import os
 import sys
 import imp
-import signal
+# import signal
 import pandas
 import traceback
 
@@ -18,7 +18,7 @@ def signal_handler(signum, frame):
 
 
 class Checker(object):
-    def __init__(self, data_path=SCRIPT_DIR + '/HR.csv'):
+    def __init__(self, data_path='HR.csv'):
         df = pandas.read_csv(data_path)
         target = 'left'
         features = [c for c in df if c != target]
@@ -29,9 +29,9 @@ class Checker(object):
     def check(self, script_path):
         AUTHOR_EMAIL = None
         try:
-            signal.signal(signal.SIGALRM, signal_handler)
+#             signal.signal(signal.SIGALRM, signal_handler)
             # Time limit на эту задачу 1 минута
-            signal.alarm(60)
+#             signal.alarm(60)
             gb_impl = imp.load_source('gb_impl_{}'.format(self.application), script_path)
             AUTHOR_EMAIL = gb_impl.AUTHOR_EMAIL
             self.application += 1
