@@ -1,0 +1,8 @@
+{
+    "author_email": "segasp5@list.ru",
+    "learning_rate": 0.05, 
+    "max_depth": 3, 
+    "n_estimators": 300, 
+    "colsample_bytree": 0.5
+    "seed": 42
+}
