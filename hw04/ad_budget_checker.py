@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 import os
 import imp
-import signal
+# import signal
 import traceback
 import sys
 import json
@@ -42,8 +42,8 @@ class Checker(object):
     def check(self, script_path):
         AUTHOR_EMAIL = None
         try:
-            signal.signal(signal.SIGALRM, signal_handler)
-            signal.alarm(120)
+#             signal.signal(signal.SIGALRM, signal_handler)
+#             signal.alarm(120)
             algo_impl = imp.load_source('algo_impl_{}'.format(self.applications), script_path)
             self.applications += 1
             AUTHOR_EMAIL = algo_impl.AUTHOR_EMAIL

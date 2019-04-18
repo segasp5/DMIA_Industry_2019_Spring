@@ -4,7 +4,7 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 import os
 import imp
-import signal
+# import signal
 import traceback
 import sys
 
@@ -29,8 +29,8 @@ class Checker(object):
     def check(self, script_path):
         AUTHOR_EMAIL = None
         try:
-            signal.signal(signal.SIGALRM, signal_handler)
-            signal.alarm(20)
+#             signal.signal(signal.SIGALRM, signal_handler)
+#             signal.alarm(20)
             algo_impl = imp.load_source('logistic_regression_{}'.format(self.applications), script_path)
             AUTHOR_EMAIL = algo_impl.AUTHOR_EMAIL
             self.applications += 1

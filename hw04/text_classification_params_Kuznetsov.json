@@ -1,0 +1,18 @@
+{
+    "author_email": "segasp5@list.ru",
+    "count_vectorizer_params": 
+    {
+        "min_df": 0.0,
+        "max_df": 1.0,
+        "analyzer": "word",
+        "ngram_range": [1, 2]
+    }, 
+    "tfidf_transformer_params": {
+        "norm": "l2"    
+    }, 
+    "logistic_regression_params": {
+        "solver": "saga",
+        "C": 36.0,
+        "random_state": 42
+    }
+}
